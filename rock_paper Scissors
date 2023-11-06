@@ -1,0 +1,50 @@
+import random
+
+def game(user, cpu):
+    if user == 'Rock' and cpu == 'Scissors':
+        return "You won"
+    elif user == 'Rock' and cpu == 'Paper':
+        return "You lose"
+    elif user == 'Paper' and cpu == 'Scissors':
+        return "You lose"
+    elif user == 'Paper' and cpu == 'Rock':
+        return "You won"
+    elif user == 'Scissors' and cpu == 'Paper':
+        return "You won"
+    elif user == 'Scissors' and cpu == 'Rock':
+        return "You lose"
+    elif user == 'Rock' and cpu == 'Rock':
+        return "It's a tie"
+    elif user == 'Paper' and cpu == 'Paper':
+        return "It's a tie"
+    elif user == 'Scissors' and cpu == 'Scissors':
+        return "It's a tie"
+
+u_score = 0
+c_score = 0
+
+while True:
+    a = input("Press 1 to start the game or any other key to exit: ")
+
+    if a != '1':
+        break
+
+    l = ['Rock', 'Paper', 'Scissors']
+    print(l)
+    user = input("Enter your choice: ")
+    cpu = random.choice(l)
+    res = game(user, cpu)
+    print(res)
+
+    if res == "You won":
+        u_score += 1
+    elif res == "You lose":
+        c_score += 1
+
+    print(f"Your Score is {u_score}")
+    print(f"Cpu Score is {c_score}")
+
+print("Final Score:")
+print(f"Your Score is {u_score}")
+print(f"Cpu Score is {c_score}")
+print("SEE YOU AGAIN :-)")
